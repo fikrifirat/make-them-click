@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Call Fikri Firat</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/stylish-portfolio.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+
+        function getJsonFromUrl() {
+          var query = location.search.substr(1);
+          var result = {};
+          query.split("&").forEach(function(part) {
+            var item = part.split("=");
+            result[item[0]] = decodeURIComponent(item[1]);
+          });
+          return result;
+        }
+
+        var params;
+        
+
+        window.onload = function(){
+            params = getJsonFromUrl();
+            var button = document.getElementById("callButton");
+            var callerid = "campaign";
+            if(params.campaign)
+            {
+                callerid = params.campaign;
+            }
+            if(params.company)
+            {
+                callerid += "_" + params.company;
+            }
+            if(params.name)
+            {
+                callerid += "_" + params.name;
+            }
+            button.setAttribute('data-caller_id',callerid);
+            
+        };
+        
+        document.addEventListener("click2vox-ready",function(){
+            document.getElementById("launch_call").addEventListener("click",function(event){
+                console.log("triggering zapier...");
+                var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
+                xmlhttp.open("POST", "https://hooks.zapier.com/hooks/catch/239979/mrvzui/");
+                //xmlhttp.setRequestHeader("Content-Type", "application/json");
+                xmlhttp.send(JSON.stringify(params));
+            });
+        });
+
+        
+    </script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+
+    <!-- Header -->
+    <header id="top" class="header">
+        <div class="text-vertical-center">
+            <a><img src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/7/005/0b5/0ed/2d9cc29.jpg" style="background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;"/></a>
+            <h1>Fikri Fırat</h1>
+            <h3>Developer Advocate at Voxbone Workshop</h3>
+            <br>
+            <a>
+            <div class="voxButton text-vertical-center" id="callButton" data-button_id="58a72916a08a081100f361cc" data-text="Call%20Fikri%20Now%20%26%23128222%3B%20%26%23128527%3B%20%26%23127757%3B%20%26%23127758%3B" data-did="883510080686" data-caller_id="test" data-incompatible_browser_configuration="show_text_html" data-server_url="https://click2vox.com" data-use_default_button_css="true" data-div_css_class_name="style-b" data-placement="bottom-right" data-text_html="Call +32493400606"></div><script async src="https://click2vox.com/click2vox.js"></script></a>
+            <br>
+            <a href="https://workshop.voxbone.com" class="btn btn-dark btn-lg">Find Out More</a>
+        </div>
+    </header>
+
+    <!-- About -->
+    
+
+</body>
+
+</html>
