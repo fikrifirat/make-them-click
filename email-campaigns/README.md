@@ -5,6 +5,7 @@ Place click-to-call buttons in e-mails with dynamic URLs that provide customers 
 Deploy a single page within your domain and place dynamic links in your e-mails that delivers all useful data to your contact center via URL parameters using the `Caller ID` or `SIP Context Headers`
 
 Gets relevant data from the URL scheme
+
 Modifies the `data-caler_id` or `data-context` fields to pass the data to your contact center.
 
 # Use Cases
@@ -15,6 +16,7 @@ If your website/application has one of the following, it's highly likely that yo
 - Support ticketing system/portal
 - E-commerce / order tracking
 - Book a reservation / appointment
+
 Well, in most of these cases, you already provide your customers with an option to call you back. But when they do, they are most likely to call your general call menu, asked to press some buttons to connect to the right person, and when asked for some specific information (such as order number, support ticket number, customer id, appointment id, PNR code etc.) go back to the **original e-mail** you sent to to them and read that to the agent. Does this have to be this complicated? Obviously not. With a call button within that email which has a URL link that already transfers all relevant data to your contact center or agent, you can make this much faster and seamless for your customers.
 
 ### Calls from automated e-mails
