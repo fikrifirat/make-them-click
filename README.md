@@ -1,0 +1,2 @@
+# click-to-call-use-cases
+Click-to-calling is a very old, simple and straight forward technology that can be implemented in many different ways. Using WebRTC is an iteration if this use case, yet it's often easy to miss the opportunity of empowering your calls and customer engagements with simple web technologies. There are various examples of  simple yet powerful examples of click-to-calling with help of Voxbone's click2vox.com
